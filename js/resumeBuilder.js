@@ -87,7 +87,18 @@ var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 var formattedGoogleMap = googleMap;
 
  var bio = {
-  "location" : "San Francisco, California",
+   "name" : "Daniel Bales"
+     "role" : "Ninja"
+     "contacts" : an object with
+           "mobile": "858-414-2528"
+           "email": "danielfbales@gmail.com"
+           "github": "danielbales"
+           "twitter": string (optional)
+           //location: string
+    // welcomeMessage: "Welcome"
+     "skills": [HTML5, CSS3]
+     "biopic": fry.jpg
+    // display: function taking no parameters
  };
 
 $("#header").prepend(formattedRole);
