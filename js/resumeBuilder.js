@@ -86,6 +86,10 @@ var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 
 var formattedGoogleMap = googleMap;
 
+ var bio = {
+  "location" : "San Francisco, California",
+ };
+
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $('#topContacts').prepend(formattedEmail);
@@ -116,13 +120,8 @@ $('#education').append(formattedOnlineTitle);
 $('#education').append(formattedOnlineDates);
 $('#education').append(formattedOnlineURL);
 $('#mapDiv').append(formattedGoogleMap);
+$('#mapDiv').append(bio);
 
 
 console.log(formattedName);
 console.log(formattedBiopic);
-
-
-
-
-
-
