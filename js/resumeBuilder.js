@@ -1,3 +1,125 @@
+var bio = {
+	"name": "Daniel Bales",
+	"role": "Ninja",
+	"contacts": {
+		"email": "danielfbales@gmail.com",
+		"github": "danielbales",
+		"twitter": "@daniel_bales",
+		"location": "San Francisco, California"
+	},
+	"picture": "images/me.png",
+	"welcomeMessage": "I'm currently working as a Marketing Manager in San Francisco, California.  Thanks for stopping by!",
+	"skills": ["HTML5", "CSS3", "Responsive Design"]
+};
+
+var work = {
+	"jobs": [
+		{
+			"employer": "Anvato, Inc.",
+			"title": "Marketing Manager",
+			"location": "San Francisco, California",
+			"datesWorked": "April 2015 - Present",
+			"description": "I was hired to work on Localize's online system, which involved knowledge in C# development, jQuery, knockoutJS, "+
+				"SQL Server, Razor templates and Wordpress. I had limited experience with some of these so I learned quickly to become "+
+				"productive as soon as possible.  I also lead discussions around better communication between the development team and "+
+				"the business as well as definiing the company vision.  I enjoyed my time at Localize and learned a tremendous amount "+
+				"from everyone I worked with there."
+		},
+		{
+			"employer": "ScImage, Inc",
+			"title": "Product Marketing Manager",
+			"location": "Mountain View, California",
+			"datesWorked": "September 2008 - March 2015",
+			"description": "My primary responsibilities involve all aspects of developing and supporting critical software " +
+				"applications in a variety of languages including Java, python, C++ and Perl in both greenfield and " +
+				"legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and " +
+				"detailed estimates as well as peer review of submitted work. I am also very involved in encouraging " +
+			"communication and collaboration within the team and have experience giving technical presentations as well " +
+			"as facilitating project retrospective discussions."
+		},
+    {
+			"employer": "Visual World, LLC",
+			"title": "Product Manager",
+			"location": "Corte Madera, California",
+			"datesWorked": "September 2008 - March 2015",
+			"description": "My primary responsibilities involve all aspects of developing and supporting critical software " +
+				"applications in a variety of languages including Java, python, C++ and Perl in both greenfield and " +
+				"legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and " +
+				"detailed estimates as well as peer review of submitted work. I am also very involved in encouraging " +
+			"communication and collaboration within the team and have experience giving technical presentations as well " +
+			"as facilitating project retrospective discussions."
+		},
+	]
+};
+
+var education = {
+	"schools": [
+		{ "name": "University of California, San Diego",
+			"datesAttended": "2007-2010",
+			"location": "La Jolla, California",
+			"degree": "B.A.",
+			"major": "International Studies",
+			"minor": "Business Management",
+			"url": "www.ucsd.edu"
+		}
+	],
+	"onlineCourses": [
+		{ "school": "Udacity",
+			"title": "Object-Oriented Javascript",
+			"completed": "November 2014",
+			"url": "https://www.udacity.com/course/ud015"
+		},
+		{ "school": "Udacity",
+			"title": "HTML5 Canvas",
+			"completed": "November 2014",
+			"url": "https://www.udacity.com/course/ud292"
+		},
+		{ "school": "Udacity",
+			"title": "Javascript Basics",
+			"completed": "October 2014",
+			"url": "https://www.udacity.com/course/ud804"
+		},
+		{ "school": "Udacity",
+			"title": "Intro to HTML and CSS",
+			"completed": "October 2014",
+			"url": "https://www.udacity.com/course/ud304"
+		},
+		{ "school": "Udacity",
+			"title": "Web Development",
+			"completed": "August 2014",
+			"url": "https://www.udacity.com/course/cs253"
+		}
+	]
+};
+
+var projects = {
+	"projects": [
+		{
+			"title": "HTML5 Canvas Game",
+			"datesWorked": "December 2014 - January 2015",
+			"description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer " +
+			"Nanodegree.",
+			"images": ["images/frogger.jpg"],
+			"url": "http://www.cherylcourt.ca/frogger"
+		},
+		{
+			"title": "Online Portfolio",
+			"datesWorked": "October 2014",
+			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer " +
+			"Nanodegree.",
+			"images": ["images/portfolio.jpg"],
+			"url": "http://www.cherylcourt.ca/"
+		},
+		{
+			"title": "Web Development Wiki",
+			"datesWorked": "June 2014 - August 2014",
+			"description": "Created an online wiki for Udacity's Web Development Course.",
+			"images": ["images/web.jpg"],
+			"url": "http://helpful-kit-572.appspot.com/"
+		}
+	]
+};
+
 var name = "Daniel Bales";
 var formattedName = HTMLheaderName.replace("%data%", name);
 
@@ -85,21 +207,6 @@ var OnlineURL = "https://www.udacity.com/course/ud304";
 var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 
 var formattedGoogleMap = googleMap;
-
- var bio = {
-   "name" : "Daniel Bales"
-     "role" : "Ninja"
-     "contacts" : an object with
-           "mobile": "858-414-2528"
-           "email": "danielfbales@gmail.com"
-           "github": "danielbales"
-           "twitter": string (optional)
-           //location: string
-    // welcomeMessage: "Welcome"
-     "skills": [HTML5, CSS3]
-     "biopic": fry.jpg
-    // display: function taking no parameters
- };
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
