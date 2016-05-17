@@ -53,47 +53,6 @@ var bio = {
  	]
  };
 
- var education = {
- 	"schools": [
- 		{ "name": "University of California, San Diego",
- 			"dates": "2007-2010",
-			"location": "La Jolla, California",
- 			"degree": "B.A.",
- 			"majors": "International Studies",
- 			"minor": "Business Management",
- 			"url": "www.ucsd.edu"
- 		}
- 	],
- 	"onlineCourses": [
- 		{ "school": "Udacity",
- 			"title": "Object-Oriented Javascript",
- 			"date": "November 2014",
- 			"url": "https://www.udacity.com/course/ud015"
- 		},
- 		{ "school": "Udacity",
- 			"title": "HTML5 Canvas",
- 			"date": "November 2014",
- 			"url": "https://www.udacity.com/course/ud292"
- 		},
- 		{ "school": "Udacity",
- 			"title": "Javascript Basics",
- 			"date": "October 2014",
- 			"url": "https://www.udacity.com/course/ud804"
- 		},
- 		{ "school": "Udacity",
- 			"title": "Intro to HTML and CSS",
- 			"date": "October 2014",
- 			"url": "https://www.udacity.com/course/ud304"
- 		},
- 		{ "school": "Udacity",
-			"title": "Web Development",
- 			"date": "August 2014",
- 			"url": "https://www.udacity.com/course/cs253"
-		}
- 	]
-
- };
-
  var projects = {
  	"projects": [
  		{
