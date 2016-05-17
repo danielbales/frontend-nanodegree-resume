@@ -12,7 +12,12 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
-  background-color: white;
+}
+
+body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .clear-fix {
@@ -106,11 +111,11 @@ a {
 }
 
 .orange {
-  background-color: #000;
+  background-color: #ff5400;
 }
 
 .orange-text {
-  color: #000;
+  color: #ff5400;
 }
 
 .white-text {
@@ -119,13 +124,13 @@ a {
 }
 
 .gray {
-  background-color: #000;
+  background-color: #898989;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #000;
+  background-color: #515151;
 }
 
 /* TODO: Replace with image later */
