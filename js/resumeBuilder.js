@@ -7,9 +7,10 @@ var bio = {
  		"twitter": "@daniel_bales",
  		"location": "San Francisco, California"
  	},
- 	"picture": "images/me.png",
+ 	"biopic": "images/me.png",
  	"welcomeMessage": "I'm currently working as a Marketing Manager in San Francisco, California.  Thanks for stopping by!",
  	"skills": ["HTML5", "CSS3", "Responsive Design"]
+
  };
 
  var work = {
@@ -18,7 +19,7 @@ var bio = {
  			"employer": "Anvato, Inc.",
  			"title": "Marketing Manager",
  			"location": "San Francisco, California",
- 			"datesWorked": "April 2015 - Present",
+ 			"dates": "April 2015 - Present",
  			"description": "I was hired to work on Localize's online system, which involved knowledge in C# development, jQuery, knockoutJS, "+
  				"SQL Server, Razor templates and Wordpress. I had limited experience with some of these so I learned quickly to become "+
  				"productive as soon as possible.  I also lead discussions around better communication between the development team and "+
@@ -29,7 +30,7 @@ var bio = {
  			"employer": "ScImage, Inc",
  			"title": "Product Marketing Manager",
  			"location": "Mountain View, California",
- 			"datesWorked": "September 2008 - March 2015",
+ 			"dates": "September 2008 - March 2015",
  			"description": "My primary responsibilities involve all aspects of developing and supporting critical software " +
  				"applications in a variety of languages including Java, python, C++ and Perl in both greenfield and " +
  				"legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and " +
@@ -41,7 +42,7 @@ var bio = {
 			"employer": "Visual World, LLC",
  			"title": "Product Manager",
  			"location": "Corte Madera, California",
- 			"datesWorked": "September 2008 - March 2015",
+ 			"dates": "September 2008 - March 2015",
  			"description": "My primary responsibilities involve all aspects of developing and supporting critical software " +
  				"applications in a variety of languages including Java, python, C++ and Perl in both greenfield and " +
  				"legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and " +
@@ -55,10 +56,10 @@ var bio = {
  var education = {
  	"schools": [
  		{ "name": "University of California, San Diego",
- 			"datesAttended": "2007-2010",
+ 			"dates": "2007-2010",
 			"location": "La Jolla, California",
  			"degree": "B.A.",
- 			"major": "International Studies",
+ 			"majors": "International Studies",
  			"minor": "Business Management",
  			"url": "www.ucsd.edu"
  		}
@@ -66,37 +67,38 @@ var bio = {
  	"onlineCourses": [
  		{ "school": "Udacity",
  			"title": "Object-Oriented Javascript",
- 			"completed": "November 2014",
+ 			"date": "November 2014",
  			"url": "https://www.udacity.com/course/ud015"
  		},
  		{ "school": "Udacity",
  			"title": "HTML5 Canvas",
- 			"completed": "November 2014",
+ 			"date": "November 2014",
  			"url": "https://www.udacity.com/course/ud292"
  		},
  		{ "school": "Udacity",
  			"title": "Javascript Basics",
- 			"completed": "October 2014",
+ 			"date": "October 2014",
  			"url": "https://www.udacity.com/course/ud804"
  		},
  		{ "school": "Udacity",
  			"title": "Intro to HTML and CSS",
- 			"completed": "October 2014",
+ 			"date": "October 2014",
  			"url": "https://www.udacity.com/course/ud304"
  		},
  		{ "school": "Udacity",
 			"title": "Web Development",
- 			"completed": "August 2014",
+ 			"date": "August 2014",
  			"url": "https://www.udacity.com/course/cs253"
 		}
  	]
+
  };
 
  var projects = {
  	"projects": [
  		{
  			"title": "HTML5 Canvas Game",
-			"datesWorked": "December 2014 - January 2015",
+			"dates": "December 2014 - January 2015",
  			"description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer " +
  			"Nanodegree.",
 			"images": ["images/frogger.jpg"],
@@ -104,7 +106,7 @@ var bio = {
  		},
 		{
  			"title": "Online Portfolio",
- 			"datesWorked": "October 2014",
+ 			"dates": "October 2014",
 			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer " +
  			"Nanodegree.",
  			"images": ["images/portfolio.jpg"],
@@ -112,14 +114,14 @@ var bio = {
 		},
  		{
  			"title": "Web Development Wiki",
- 			"datesWorked": "June 2014 - August 2014",
+ 			"dates": "June 2014 - August 2014",
  			"description": "Created an online wiki for Udacity's Web Development Course.",
  			"images": ["images/web.jpg"],
 			"url": "http://helpful-kit-572.appspot.com/"
  		}
  	]
  };
- 
+
 var education = {
 	"schools": [
 		{ "name": "University of California, San Diego",
