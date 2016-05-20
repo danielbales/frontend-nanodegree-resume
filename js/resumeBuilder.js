@@ -98,10 +98,8 @@ var bio = {
 		"title": "Web Development",
 		"completed": "August 2014",
 		"url": "https://www.udacity.com/course/cs253"
-	}]
+	}],
 }
-
-
 
 var projects = {
 	"projects": [
@@ -238,21 +236,6 @@ $('#projects').append(HTMLprojectTitle);
 $('#projects').append(HTMLprojectDates);
 $('#projects').append(formattedProject1Description);
 $('#projects').append(formattedProject1Image);
-$('#education').prepend(formattedSchoolStart);
-$('#education').append(formattedSchoolName);
-$('#education').append(formattedSchoolLocation);
-$('#education').append(formattedSchoolMajor);
-$('#education').append(formattedOnlineClasses);
-$('#education').append(formattedOnlineTitle);
-$('#education').append(formattedOnlineDates);
-$('#education').append(formattedOnlineURL);
+
 $('#mapDiv').append(formattedGoogleMap);
 $('#mapDiv').append(bio);
-
-education.display = function()  {
-  console.log("formattedName");
-};
-
-
-console.log(formattedName);
-console.log(formattedBiopic);
