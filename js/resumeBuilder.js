@@ -104,6 +104,8 @@ var projects = {
 	]
 }
 
+function displayBio() {
+
 //var name = "Daniel Bales";
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
@@ -125,7 +127,7 @@ var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
 
 //var welcome = "I'm currently working at Anvato, Inc in San Francisco, California.";
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-
+function displayBio() {
 var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
 var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
 
@@ -218,3 +220,11 @@ $('#projects').append(formattedProject1Image);
 
 $('#mapDiv').append(formattedGoogleMap);
 $('#mapDiv').append(bio);
+
+}
+}
+
+// We display bio, by calling displayBio()
+displayBio();
+// We display bio, by calling displayBio()
+displayWork();
