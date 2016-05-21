@@ -5,10 +5,11 @@ var bio = {
  		"email": "danielfbales@gmail.com",
  		"github": "danielbales",
  		"twitter": "@daniel_bales",
+    "mobile": "+1 858-414-2528",
  		"location": "San Francisco, California"
  	},
- 	"biopic": "images/me.png",
- 	"welcomeMessage": "I'm currently working as a Marketing Manager in San Francisco, California.  Thanks for stopping by!",
+ 	"bioPic": "images/white-mhz-logo.png",
+ 	"welcomeMsg": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
  	"skills": ["HTML5", "CSS3", "Responsive Design"]
 
  }
@@ -37,31 +38,7 @@ var bio = {
  			"description": "My primary responsibilities involve all aspects of developing and supporting critical software applications in a variety of languages including Java, python, C++ and Perl in both greenfield and legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and detailed estimates as well as peer review of submitted work. I am also very involved in encouraging communication and collaboration within the team and have experience giving technical presentations as well as facilitating project retrospective discussions."
      	}]
      }
- var projects = {
- 	"projects": [
- 		{
- 			"title": "HTML5 Canvas Game",
-			"dates": "December 2014 - January 2015",
- 			"description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-			"images": ["images/frogger.jpg"],
- 			"url": "http://www.cherylcourt.ca/frogger"
- 		},
-		{
- 			"title": "Online Portfolio",
- 			"dates": "October 2014",
-			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer Nanodegree.",
- 			"images": ["images/portfolio.jpg"],
- 			"url": "http://www.cherylcourt.ca/"
-		},
- 		{
- 			"title": "Web Development Wiki",
- 			"dates": "June 2014 - August 2014",
- 			"description": "Created an online wiki for Udacity's Web Development Course.",
- 			"images": ["images/web.jpg"],
-			"url": "http://helpful-kit-572.appspot.com/"
- 		}
- 	]
- }
+
 
  var education = {
 	"schools": [{
@@ -127,26 +104,27 @@ var projects = {
 	]
 }
 
-var name = "Daniel Bales";
-var formattedName = HTMLheaderName.replace("%data%", name);
+//var name = "Daniel Bales";
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
-var role = "Ninja";
+//var role = "Ninja";
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
-var email = "danielfbales@gmail.com";
-var formattedEmail = HTMLemail.replace("%data%", email);
+//var email = "danielfbales@gmail.com";
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 
-var github = "danielbales";
-var formattedGithub = HTMLgithub.replace("%data%", github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-var mobile = "858 414 2528";
-var formattedMobile = HTMLmobile.replace("%data%", mobile);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 
-var biopic = "I'm currently working at Anvato, Inc in San Francisco, California.";
-var formattedBiopic = HTMLbioPic.replace("%data%", biopic);
+//var github = "danielbales";
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 
-var welcome = "I'm currently working at Anvato, Inc in San Francisco, California.";
-var formattedWelcome = HTMLwelcomeMsg.replace("%data%", welcome);
+//var biopic = "I'm currently working at Anvato, Inc in San Francisco, California.";
+var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
+
+//var welcome = "I'm currently working at Anvato, Inc in San Francisco, California.";
+var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 
 var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
 var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
@@ -220,8 +198,9 @@ $("#header").prepend(formattedName);
 $('#topContacts').prepend(formattedEmail);
 $('#topContacts').prepend(formattedGithub);
 $('#topContacts').prepend(formattedMobile);
-$('#header').append(formattedWelcome);
+$('#topContacts').append(formattedLocation);
 $('#header').append(formattedBiopic);
+$('#header').append(formattedWelcome);
 $('#header').append(formattedSkillsStart);
 $('#header').append(formattedSkills);
 $('#header').append(formattedSkills1);

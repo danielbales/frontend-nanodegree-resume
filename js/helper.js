@@ -23,7 +23,7 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="images/fry.jpg" class="biopic">';
+var HTMLbioPic = '<img src="images/Discovery_Shark_Week-300x300.jpg" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">Online Portfolio</a>';
 var HTMLprojectDates = '<div class="date-text">March 2016</div>';
 var HTMLprojectDescription = '<p><br>Created an online portfolio of work as part of Udacitys Front End Web Developer Nanodegree.</p>';
-var HTMLprojectImage = '<img src="images/fry.jpg">';
+var HTMLprojectImage = '<img src="images/Discovery_Shark_Week-300x300.jpg">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
