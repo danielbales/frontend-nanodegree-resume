@@ -127,7 +127,7 @@ var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
 
 //var welcome = "I'm currently working at Anvato, Inc in San Francisco, California.";
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-function displayBio() {
+function displayWork() {
 var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
 var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
 
