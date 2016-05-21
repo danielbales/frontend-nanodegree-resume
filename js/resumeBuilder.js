@@ -104,41 +104,7 @@ var projects = {
 	]
 }
 
-function displayBio() {
 
-//var name = "Daniel Bales";
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-
-//var role = "Ninja";
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-
-//var email = "danielfbales@gmail.com";
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-
-//var github = "danielbales";
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-
-//var biopic = "I'm currently working at Anvato, Inc in San Francisco, California.";
-var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
-
-//var welcome = "I'm currently working at Anvato, Inc in San Francisco, California.";
-var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-function displayWork() {
-var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
-var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
-
-var skills = "HTML5";
-var formattedSkills = HTMLskills.replace("%data%", skills);
-
-var skills1 = "CSS3";
-var formattedSkills1 = HTMLskills.replace("%data%", skills1);
-
-var skills2 = "JavaScript";
-var formattedSkills2 = HTMLskills.replace("%data%", skills2);
 
 var employer = "Anvato, Inc. - Marketing Manager";
 var formattedEmployer = HTMLworkEmployer.replace("%data%", employer);
@@ -195,18 +161,8 @@ var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 
 var formattedGoogleMap = googleMap;
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$('#topContacts').prepend(formattedEmail);
-$('#topContacts').prepend(formattedGithub);
-$('#topContacts').prepend(formattedMobile);
-$('#topContacts').append(formattedLocation);
-$('#header').append(formattedBiopic);
-$('#header').append(formattedWelcome);
-$('#header').append(formattedSkillsStart);
-$('#header').append(formattedSkills);
-$('#header').append(formattedSkills1);
-$('#header').append(formattedSkills2);
+
+
 $('#workExperience').append(HTMLworkStart);
 $('#workExperience').append(formattedEmployer);
 $('#workExperience').append(formattedWorkDates);
@@ -221,10 +177,41 @@ $('#projects').append(formattedProject1Image);
 $('#mapDiv').append(formattedGoogleMap);
 $('#mapDiv').append(bio);
 
-}
-}
+function displayBio() {
 
-// We display bio, by calling displayBio()
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+    var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
+    var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
+    var skills = "HTML5";
+    var formattedSkills = HTMLskills.replace("%data%", skills);
+    var skills1 = "CSS3";
+    var formattedSkills1 = HTMLskills.replace("%data%", skills1);
+    var skills2 = "JavaScript";
+    var formattedSkills2 = HTMLskills.replace("%data%", skills2);
+
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $('#header').append(formattedBiopic);
+    $('#header').append(formattedWelcome);
+    $('#header').append(formattedSkillsStart);
+    $('#header').append(formattedSkills);
+    $('#header').append(formattedSkills1);
+    $('#header').append(formattedSkills2);
+}
 displayBio();
-// We display bio, by calling displayBio()
-displayWork();
+
+function displayTopContacts() {
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
+    $('#topContacts').prepend(formattedEmail);
+    $('#topContacts').prepend(formattedGithub);
+    $('#topContacts').prepend(formattedMobile);
+    $('#topContacts').append(formattedLocation);
+}
+displayTopContacts();
