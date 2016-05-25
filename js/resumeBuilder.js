@@ -139,25 +139,6 @@ function displayBio() {
 displayBio();
 
 
-function displayWork() {
-
-  var employer = "Anvato, Inc. - Marketing Manager";
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", employer);
-  var workdates = "April 2015 - Present";
-  var formattedWorkDates = HTMLworkDates.replace("%data%", workdates);
-  var worklocation = "San Francisco, California";
-  var formattedworkLocation = HTMLworkLocation.replace("%data%", worklocation);
-  var workdescription = "My core responsibilities at Anvato include ongoing design and development of our dotcom properties, manage and optimize Anvato's digital marketing campaigns, monitor and maintain company’s online presence, and to author and publish external communications, including press releases, newsletters, blog posts, social network messaging, and more";
-  var formattedWorkDescription = HTMLworkDescription.replace("%data%", workdescription);
-
-  $('#workExperience').append(HTMLworkStart);
-  $('#workExperience').append(formattedEmployer);
-  $('#workExperience').append(formattedWorkDates);
-  $('#workExperience').append(formattedworkLocation);
-  $('#workExperience').append(formattedWorkDescription);
-}
-displayWork();
-
 function displayEducation() {
 
   var SchoolStart = "Online Portfolio";
@@ -222,3 +203,30 @@ $('#mapDiv').append(formattedGoogleMap);
 
 }
 displayMap();
+
+function displayWork() {
+
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+}
+}
+displayWork();
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+}
+  );
