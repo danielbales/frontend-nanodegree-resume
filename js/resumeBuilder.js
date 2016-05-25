@@ -21,22 +21,30 @@ var bio = {
  			"title": "Marketing Manager",
  			"location": "San Francisco, California",
  			"dates": "April 2015 - Present",
- 			"description": "I was hired to work on Localize's online system, which involved knowledge in C# development, jQuery, knockoutJS, SQL Server, Razor templates and Wordpress. I had limited experience with some of these so I learned quickly to become productive as soon as possible.  I also lead discussions around better communication between the development team and the business as well as definiing the company vision.  I enjoyed my time at Localize and learned a tremendous amount from everyone I worked with there."
+ 			"description": "Core responsibilities include ongoing design and development of Anvato's dotcom properties, management and optimize Anvato's digital marketing campaigns, monitor and maintain company’s online presence, authoring external communications including press releases, newsletters, blog posts, social network messaging, etc."
  		},
  		{
  			"employer": "ScImage, Inc",
  			"title": "Product Marketing Manager",
  			"location": "Mountain View, California",
- 			"dates": "September 2008 - March 2015",
- 			"description": "My primary responsibilities involve all aspects of developing and supporting critical software applications in a variety of languages including Java, python, C++ and Perl in both greenfield and legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and detailed estimates as well as peer review of submitted work. I am also very involved in encouraging communication and collaboration within the team and have experience giving technical presentations as well as facilitating project retrospective discussions."
+ 			"dates": "September 2013 - March 2015",
+ 			"description": "As Product Marketing Manager at ScImage, I was responsible for all digital marketing strategies and web design/development efforts."
  		},
-     {
-			"employer": "Visual World, LLC",
+    {
+      "employer": "Visual World, LLC",
  			"title": "Product Manager",
  			"location": "Corte Madera, California",
- 			"dates": "September 2008 - March 2015",
- 			"description": "My primary responsibilities involve all aspects of developing and supporting critical software applications in a variety of languages including Java, python, C++ and Perl in both greenfield and legacy systems.  This work includes, but is not limited to, database design, software architecture design, high level and detailed estimates as well as peer review of submitted work. I am also very involved in encouraging communication and collaboration within the team and have experience giving technical presentations as well as facilitating project retrospective discussions."
-     	}]
+ 			"dates": "January 2013 - September 2013",
+ 			"description": "Worked directly with software engineers to help create and launch a digital marketing platform. Led web development team in charge of HTML5, Ruby on Rails and Java applications. Conducted quality assurance testing using various web browser automation tools. Executed Scrum, including daily stand-ups and scoping iterations; analyze project success. Authored e-commerce site's content, text and website page format."
+
+ 			},
+     {
+       "employer": "Development Laboratories",
+ 			"title": "Scrum Master",
+ 			"location": "Del Mar, California",
+ 			"dates": "August 2011 - January 2013",
+ 			"description": "Managed a distributed team across Asia, the United States and Europe; directly supervised six employees. Led web development team in charge of HTML and Ruby on Rails. Created and designed materials for e-commerce including marketing and legal information. Executing Scrum, including daily stand-ups and scoping iterations; analyzed project success. Supervised development efforts for creation of e-commerce website designed to sell management tools for the software development industry. Authored the business plan for the company's flagship products."
+			}]
      }
 
 
@@ -230,3 +238,15 @@ $(document).click(function(loc) {
   logClicks(x,y);
 }
   );
+
+function locationizer(work_obj) {
+  var locationArray = [];
+
+  for (job in work_obj.jobs) {
+    var newLocation = work_obj.jobs[job].location;
+    locationArray.push(newLocation);
+  }
+  return locationArray;
+}
+
+console.log(locationizer(work));
