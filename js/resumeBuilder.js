@@ -36,7 +36,6 @@ var bio = {
  			"location": "Corte Madera, California",
  			"dates": "January 2013 - September 2013",
  			"description": "Worked directly with software engineers to help create and launch a digital marketing platform. Led web development team in charge of HTML5, Ruby on Rails and Java applications. Conducted quality assurance testing using various web browser automation tools. Executed Scrum, including daily stand-ups and scoping iterations; analyze project success. Authored e-commerce site's content, text and website page format."
-
  			},
      {
        "employer": "Development Laboratories",
@@ -231,6 +230,19 @@ for (job in work.jobs) {
 }
 displayWork();
 
+function displayFooterContacts() {
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
+$('#footerContacts').append(formattedEmail);
+$('#footerContacts').append(formattedGithub);
+$('#footerContacts').append(formattedMobile);
+$('#footerContacts').append(formattedLocation);
+}
+displayFooterContacts();
+
 $(document).click(function(loc) {
   var x = loc.pageX;
   var y = loc.pageY;
@@ -250,3 +262,14 @@ function locationizer(work_obj) {
 }
 
 console.log(locationizer(work));
+
+function inName(name) {
+  name = name.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase(); + name[0].slice(1).toLowerCase();
+
+  return name[0] +" "+name[1];
+}
+
+$('#main').append(internationalizeButton);
