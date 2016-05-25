@@ -8,11 +8,11 @@ var bio = {
     "mobile": "+1 858-414-2528",
  		"location": "San Francisco, California"
  	},
- 	"bioPic": "images/white-mhz-logo.png",
- 	"welcomeMsg": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
+ 	"biopic": "images/white-mhz-logo.png",
+ 	"welcomeMessage": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
  	"skills": ["HTML5", "CSS3", "Responsive Design"]
 
- }
+};
 
  var work = {
  	"jobs": [
@@ -44,7 +44,7 @@ var bio = {
  			"dates": "August 2011 - January 2013",
  			"description": "Managed a distributed team across Asia, the United States and Europe; directly supervised six employees. Led web development team in charge of HTML and Ruby on Rails. Created and designed materials for e-commerce including marketing and legal information. Executing Scrum, including daily stand-ups and scoping iterations; analyzed project success. Supervised development efforts for creation of e-commerce website designed to sell management tools for the software development industry. Authored the business plan for the company's flagship products."
 			}]
-     }
+    };
 
 
  var education = {
@@ -53,37 +53,27 @@ var bio = {
 		"datesAttended": "2007-2010",
 		"location": "La Jolla, California",
 		"degree": "B.A.",
-		"major": "International Studies",
+		"majors": ["International Studies"],
 		"minor": "Business Management",
 		"url": "www.ucsd.edu"
 	}],
 	"onlineCourses": [{
 		"school": "Udacity",
-		"title": "Object-Oriented Javascript",
-		"completed": "November 2014",
-		"url": "https://www.udacity.com/course/ud015"
-	}, {
-		"school": "Udacity",
-		"title": "HTML5 Canvas",
-		"completed": "November 2014",
-		"url": "https://www.udacity.com/course/ud292"
-	}, {
-		"school": "Udacity",
 		"title": "Javascript Basics",
-		"completed": "October 2014",
+		"date": "May 2016",
 		"url": "https://www.udacity.com/course/ud804"
 	}, {
 		"school": "Udacity",
 		"title": "Intro to HTML and CSS",
-		"completed": "October 2014",
+		"date": "March 2016",
 		"url": "https://www.udacity.com/course/ud304"
 	}, {
 		"school": "Udacity",
 		"title": "Web Development",
-		"completed": "August 2014",
+		"date": "August 2016",
 		"url": "https://www.udacity.com/course/cs253"
 	}],
-}
+};
 
 var projects = {
 	"projects": [
@@ -109,26 +99,24 @@ var projects = {
 			"url": "http://helpful-kit-572.appspot.com/"
 		}
 	]
-}
+};
 
-function displayBio() {
+bio.display = function () {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
-    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
     var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
-    var skills = "HTML5";
     var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-    var skills1 = "CSS3";
     var formattedSkills1 = HTMLskills.replace("%data%", bio.skills[1]);
-    var skills2 = "JavaScript";
     var formattedSkills2 = HTMLskills.replace("%data%", bio.skills[2]);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
 
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
@@ -142,11 +130,15 @@ function displayBio() {
     $('#topContacts').prepend(formattedGithub);
     $('#topContacts').prepend(formattedMobile);
     $('#topContacts').append(formattedLocation);
+    $('#footerContacts').prepend(formattedEmail);
+    $('#footerContacts').prepend(formattedGithub);
+    $('#footerContacts').prepend(formattedMobile);
+    $('#footerContacts').append(formattedLocation);
 }
-displayBio();
+bio.display();
 
 
-function displayEducation() {
+education.display = function() {
 
   var SchoolStart = "Online Portfolio";
   var formattedSchoolStart = HTMLschoolStart.replace("%data%", SchoolStart);
@@ -162,7 +154,7 @@ function displayEducation() {
   var formattedOnlineClasses = HTMLonlineClasses.replace("%data%", OnlineClasses);
   var OnlineTitle = "Intro to HTML and CSS - Udacity";
   var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", OnlineTitle);
-  var OnlineDates = "March 2016";
+  var OnlineDates = "February - March 2016";
   var formattedOnlineDates = HTMLonlineDates.replace("%data%", OnlineDates);
   var OnlineURL = "https://www.udacity.com/course/ud304";
   var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
@@ -178,9 +170,9 @@ function displayEducation() {
   $('#education').append(formattedOnlineDates);
   $('#education').append(formattedOnlineURL);
 }
-displayEducation();
+education.display();
 
-function displayProjects() {
+projects.display = function() {
 
   var formattedProjectStart = HTMLprojectStart;
   var project1 = "Online Portfolio";
@@ -199,19 +191,17 @@ function displayProjects() {
   $('#projects').append(formattedProject1Image);
 
 }
-displayProjects();
+projects.display();
 
-function displayMap() {
+
 
 var formattedGoogleMap = googleMap;
 
 $('#mapDiv').append(formattedGoogleMap);
-//$('#mapDiv').append(bio);
 
-}
-displayMap();
 
-function displayWork() {
+
+work.display = function() {
 
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
@@ -228,20 +218,8 @@ for (job in work.jobs) {
   $(".work-entry:last").append(formattedDescription);
 }
 }
-displayWork();
+work.display();
 
-function displayFooterContacts() {
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-$('#footerContacts').append(formattedEmail);
-$('#footerContacts').append(formattedGithub);
-$('#footerContacts').append(formattedMobile);
-$('#footerContacts').append(formattedLocation);
-}
-displayFooterContacts();
 
 $(document).click(function(loc) {
   var x = loc.pageX;
@@ -294,4 +272,4 @@ projects.display = function () {
       }
     }
   }
-}
+};
