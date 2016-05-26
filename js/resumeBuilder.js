@@ -218,7 +218,6 @@ for (job in work.jobs) {
 }
 work.display();
 
-
 $(document).click(function(loc) {
   var x = loc.pageX;
   var y = loc.pageY;
