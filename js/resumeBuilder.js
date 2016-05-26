@@ -133,7 +133,7 @@ bio.display = function () {
     $('#footerContacts').prepend(formattedGithub);
     $('#footerContacts').prepend(formattedMobile);
     $('#footerContacts').append(formattedLocation);
-}
+};
 bio.display();
 
 
@@ -168,7 +168,7 @@ education.display = function() {
   $('#education').append(formattedOnlineTitle);
   $('#education').append(formattedOnlineDates);
   $('#education').append(formattedOnlineURL);
-}
+};
 education.display();
 
 projects.display = function() {
@@ -188,8 +188,7 @@ projects.display = function() {
   $('#projects').append(HTMLprojectDates);
   $('#projects').append(formattedProject1Description);
   $('#projects').append(formattedProject1Image);
-
-}
+};
 projects.display();
 
 
