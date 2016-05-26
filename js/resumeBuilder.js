@@ -5,13 +5,12 @@ var bio = {
  		"email": "danielfbales@gmail.com",
  		"github": "danielbales",
  		"twitter": "@daniel_bales",
-    "mobile": "+1 858-414-2528",
+    "mobile": "+1-858-414-2528",
  		"location": "San Francisco, California"
  	},
  	"biopic": "images/white-mhz-logo.png",
  	"welcomeMessage": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
  	"skills": ["HTML5", "CSS3", "Responsive Design"]
-
 };
 
  var work = {
@@ -50,7 +49,7 @@ var bio = {
  var education = {
 	"schools": [{
 		"name": "University of California, San Diego",
-		"datesAttended": "2007-2010",
+		"dates": "2007-2010",
 		"location": "La Jolla, California",
 		"degree": "B.A.",
 		"majors": ["International Studies"],
