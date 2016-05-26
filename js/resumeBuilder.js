@@ -8,7 +8,7 @@ var bio = {
     "mobile": "+1-858-414-2528",
  		"location": "San Francisco, California"
  	},
- 	"biopic": "images/white-mhz-logo.png",
+ 	"biopic": "images/Discovery_Shark_Week-300x300.jpg",
  	"welcomeMessage": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
  	"skills": ["HTML5", "CSS3", "Responsive Design"]
 };
@@ -104,7 +104,7 @@ bio.display = function () {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
     var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
@@ -174,18 +174,18 @@ education.display();
 projects.display = function() {
 
   var formattedProjectStart = HTMLprojectStart;
-  var project1 = "Online Portfolio";
-  var formattedProject1 = HTMLprojectTitle.replace("%data%", project1);
-  var project1Dates = "Online Portfolio";
+  var project1Dates = "April 2016 - May 2016";
   var formattedProject1Dates = HTMLprojectDates.replace("%data%", project1Dates);
-  var project1Description = "Online Portfolio";
+  var project1Title = "Image of Fry";
+  var formattedProject1Title = HTMLprojectTitle.replace("%data%", project1Title);
+  var project1Description = "This is an image of Fry, duh";
   var formattedProject1Description = HTMLprojectDescription.replace("%data%", project1Description);
-  var project1Image = "Online Portfolio";
+  var project1Image = "images/fry.jpg";
   var formattedProject1Image = HTMLprojectImage.replace("%data%", project1Image);
 
   $('#projects').append(formattedProjectStart);
-  $('#projects').append(HTMLprojectTitle);
-  $('#projects').append(HTMLprojectDates);
+  $('#projects').append(formattedProject1Title);
+  $('#projects').append(formattedProject1Dates);
   $('#projects').append(formattedProject1Description);
   $('#projects').append(formattedProject1Image);
 };
