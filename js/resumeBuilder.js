@@ -192,11 +192,13 @@ projects.display = function() {
 projects.display();
 
 
-
+map.display = function() {
 var formattedGoogleMap = googleMap;
 
 $('#mapDiv').append(formattedGoogleMap);
 
+}
+map.display();
 
 
 work.display = function() {
