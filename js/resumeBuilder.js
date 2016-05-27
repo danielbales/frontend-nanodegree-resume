@@ -191,7 +191,7 @@ projects.display = function() {
 };
 projects.display();
 
-
+var map = {};
 map.display = function() {
 var formattedGoogleMap = googleMap;
 
