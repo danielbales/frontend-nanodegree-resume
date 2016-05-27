@@ -250,3 +250,16 @@ function inName(name) {
 }
 
 $('#main').append(internationalizeButton);
+
+var map = {}
+map.display = function() {
+  var formattedGoogleMap;
+}
+
+function displayMap() {
+  $('#mapDiv').append(formattedGoogleMap);
+};
+
+function display() {
+  displayMap();
+};
