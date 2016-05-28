@@ -261,5 +261,5 @@ function displayMap() {
 };
 
 function display() {
-  displayMap();
+  displayMap(googleMap);
 };
