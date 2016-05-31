@@ -253,11 +253,11 @@ $('#main').append(internationalizeButton);
 
 var map = {}
 map.display = function() {
-  var formattedGoogleMap;
+  var googleMap;
 }
 
 function displayMap() {
-  $('#mapDiv').append(formattedGoogleMap);
+  $('#mapDiv').append(googleMap);
 };
 
 function display() {
