@@ -10,7 +10,7 @@ var bio = {
  	},
  	"biopic": "images/Discovery_Shark_Week-300x300.jpg",
  	"welcomeMessage": "I'm currently working as a Marketing Manager at Anvato, Inc in San Francisco, California.",
- 	"skills": ["HTML5", "CSS3", "Responsive Design"]
+ 	"skills": ["HTML5", "CSS3", "Responsive Design", "JavaScript"]
 };
 
  var work = {
@@ -106,33 +106,23 @@ bio.display = function () {
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    var skillsstart = "I'm currently working at Anvato, Inc in San Francisco, California.";
-    var formattedSkillsStart = HTMLskillsStart.replace("%data%", skillsstart);
+    //Not sure if this code below is right, is it?
+    var formattedSkillsStart = HTMLskillsStart;
     var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
     var formattedSkills1 = HTMLskills.replace("%data%", bio.skills[1]);
     var formattedSkills2 = HTMLskills.replace("%data%", bio.skills[2]);
+    var formattedSkills3 = HTMLskills.replace("%data%", bio.skills[3]);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
 
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-    $('#header').append(formattedBiopic);
-    $('#header').append(formattedWelcome);
-    $('#header').append(formattedSkillsStart);
-    $('#header').append(formattedSkills);
-    $('#header').append(formattedSkills1);
-    $('#header').append(formattedSkills2);
-    $('#topContacts').prepend(formattedEmail);
-    $('#topContacts').prepend(formattedGithub);
-    $('#topContacts').prepend(formattedMobile);
-    $('#topContacts').append(formattedLocation);
-    $('#footerContacts').prepend(formattedEmail);
-    $('#footerContacts').prepend(formattedGithub);
-    $('#footerContacts').prepend(formattedMobile);
-    $('#footerContacts').append(formattedLocation);
+    $("#header").prepend(formattedName, formattedRole);
+    $('#header').append(formattedBiopic, formattedWelcome, formattedSkillsStart, formattedSkills, formattedSkills1, formattedSkills2, formattedSkills3);
+    $('#topContacts').prepend(formattedLocation, formattedEmail, formattedGithub, formattedTwitter, formattedMobile);
+    $('#footerContacts').prepend(formattedLocation, formattedEmail, formattedGithub, formattedTwitter, formattedMobile);
 };
 bio.display();
 
@@ -158,16 +148,7 @@ education.display = function() {
   var OnlineURL = "https://www.udacity.com/course/ud304";
   var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 
-
-  $('#education').append(formattedSchoolStart);
-  $('#education').append(formattedSchoolName);
-  $('#education').append(formattedschoolDates);
-  $('#education').append(formattedSchoolLocation);
-  $('#education').append(formattedSchoolMajor);
-  $('#education').append(formattedOnlineClasses);
-  $('#education').append(formattedOnlineTitle);
-  $('#education').append(formattedOnlineDates);
-  $('#education').append(formattedOnlineURL);
+  $('#education').append(formattedSchoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, formattedOnlineClasses, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
 };
 education.display();
 
