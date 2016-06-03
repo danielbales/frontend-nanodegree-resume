@@ -52,15 +52,20 @@ var bio = {
 		"dates": "2007-2010",
 		"location": "La Jolla, California",
 		"degree": "B.A.",
-		"majors": ["International Studies"],
-		"minor": "Business Management",
-		"url": "www.ucsd.edu"
-	}],
+		"majors": ["International Studies/Business Management"]
+	},
+  {
+    "name": "La Jolla High School",
+		"dates": "2007-2010",
+		"location": "La Jolla, California",
+		"degree": "B.A.",
+		"majors": ["International Studies"]
+  }],
 	"onlineCourses": [{
 		"school": "Udacity",
 		"title": "Javascript Basics",
 		"date": "May 2016",
-		"url": "https://www.udacity.com/course/ud804"
+		"url": "https://www.google.com"
 	}, {
 		"school": "Udacity",
 		"title": "Intro to HTML and CSS",
@@ -78,23 +83,23 @@ var projects = {
 	"projects": [
 		{
 			"title": "HTML5 Canvas Game",
-			"dates": "December 2014 - January 2015",
+			"dates": "December 2015 - January 2016",
 			"description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-			"images": ["images/frogger.jpg"],
+			"images": ["images/Discovery_Shark_Week-300x300.jpg"],
 			"url": "http://www.cherylcourt.ca/frogger"
 		},
 		{
 			"title": "Online Portfolio",
 			"dates": "October 2014",
 			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer Nanodegree.",
-			"images": ["images/portfolio.jpg"],
+			"images": ["images/fry.jpg"],
 			"url": "http://www.cherylcourt.ca/"
 		},
 		{
 			"title": "Web Development Wiki",
 			"dates": "June 2014 - August 2014",
 			"description": "Created an online wiki for Udacity's Web Development Course.",
-			"images": ["images/web.jpg"],
+			"images": ["images/Discovery_Shark_Week-300x300.jpg"],
 			"url": "http://helpful-kit-572.appspot.com/"
 		}
 	]
@@ -112,9 +117,9 @@ bio.display = function () {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
-
     $("#header").prepend(formattedName, formattedRole);
     $('#header').append(formattedBiopic, formattedWelcome, HTMLskillsStart);
+    //skills loop below
       bio.skills.forEach(function(skill){
             var formattedSkills = HTMLskills.replace("%data%", skill);
             $("#skills").append(formattedSkills);
@@ -127,42 +132,40 @@ bio.display();
 
 education.display = function() {
 
-  //var SchoolStart = "Online Portfolio";
   var formattedSchoolStart = HTMLschoolStart.replace("%data%", education.schools.dates);
-  //var SchoolName = "University of California, San Diego - B.A. International Studies/Business Management";
-  var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools.name);
-  //var SchoolDates = "2007 - 2010";
-  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools.dates);
-  var SchoolLocation = "San Diego, California";
-  var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", SchoolLocation);
-  var SchoolMajor = "International Studies";
-  var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", SchoolMajor);
-  var OnlineClasses = "International Studies";
-  var formattedOnlineClasses = HTMLonlineClasses.replace("%data%", OnlineClasses);
-  var OnlineTitle = "Intro to HTML and CSS - Udacity";
-  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", OnlineTitle);
-  var OnlineDates = "February - March 2016";
-  var formattedOnlineDates = HTMLonlineDates.replace("%data%", OnlineDates);
-  var OnlineURL = "https://www.udacity.com/course/ud304";
-  var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
+  var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[0].name);
+  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[0].dates);
+  var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[0].location);
+  var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[0].majors);
+  //online classes below
+  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[0].title);
+  var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[0].school);
+  var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[0].date);
+  var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[0].url);
 
-  $('#education').append(HTMLschoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, formattedOnlineClasses, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
+  $('#education').append(HTMLschoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, HTMLonlineClasses, formattedOnlineSchool, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
+  // //loop starts below
+  // education.schools.forEach(function(school){
+  //       var formattedSchoolName = HTMLschoolName.replace("%data%", school);
+  //       var formattedschoolDates = HTMLschoolDates.replace("%data%", school);
+  //       var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school);
+  //       var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school);
+  //       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", school);
+  //       var formattedOnlineDates = HTMLonlineDates.replace("%data%", school);
+  //       var formattedOnlineURL = HTMLonlineURL.replace("%data%", school);
+  //       $("#education").append(HTMLschoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineURL);
+  // });
 };
 education.display();
 
 projects.display = function() {
 
-  var formattedProjectStart = HTMLprojectStart;
-  var project1Dates = "April 2016 - May 2016";
-  var formattedProject1Dates = HTMLprojectDates.replace("%data%", project1Dates);
-  var project1Title = "Image of Fry";
-  var formattedProject1Title = HTMLprojectTitle.replace("%data%", project1Title);
-  var project1Description = "This is an image of Fry, duh";
-  var formattedProject1Description = HTMLprojectDescription.replace("%data%", project1Description);
-  var project1Image = "images/fry.jpg";
-  var formattedProject1Image = HTMLprojectImage.replace("%data%", project1Image);
+  var formattedProject1Dates = HTMLprojectDates.replace("%data%", projects.projects[0].dates);
+  var formattedProject1Title = HTMLprojectTitle.replace("%data%", projects.projects[0].title);
+  var formattedProject1Description = HTMLprojectDescription.replace("%data%", projects.projects[0].description);
+  var formattedProject1Image = HTMLprojectImage.replace("%data%", projects.projects[0].images);
 
-  $('#projects').append(formattedProjectStart, formattedProject1Title, formattedProject1Dates, formattedProject1Description, formattedProject1Image);
+  $('#projects').append(HTMLprojectStart, formattedProject1Title, formattedProject1Dates, formattedProject1Description, formattedProject1Image);
 };
 projects.display();
 
