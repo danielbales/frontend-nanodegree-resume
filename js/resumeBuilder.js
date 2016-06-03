@@ -127,12 +127,12 @@ bio.display();
 
 education.display = function() {
 
-  var SchoolStart = "Online Portfolio";
-  var formattedSchoolStart = HTMLschoolStart.replace("%data%", SchoolStart);
-  var SchoolName = "University of California, San Diego - B.A. International Studies/Business Management";
-  var formattedSchoolName = HTMLschoolName.replace("%data%", SchoolName);
-  var SchoolDates = "2007 - 2010";
-  var formattedschoolDates = HTMLschoolDates.replace("%data%", SchoolDates);
+  //var SchoolStart = "Online Portfolio";
+  var formattedSchoolStart = HTMLschoolStart.replace("%data%", education.schools.dates);
+  //var SchoolName = "University of California, San Diego - B.A. International Studies/Business Management";
+  var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools.name);
+  //var SchoolDates = "2007 - 2010";
+  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools.dates);
   var SchoolLocation = "San Diego, California";
   var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", SchoolLocation);
   var SchoolMajor = "International Studies";
@@ -146,7 +146,7 @@ education.display = function() {
   var OnlineURL = "https://www.udacity.com/course/ud304";
   var formattedOnlineURL = HTMLonlineURL.replace("%data%", OnlineURL);
 
-  $('#education').append(formattedSchoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, formattedOnlineClasses, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
+  $('#education').append(HTMLschoolStart, formattedSchoolName, formattedschoolDates, formattedSchoolLocation, formattedSchoolMajor, formattedOnlineClasses, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
 };
 education.display();
 
@@ -162,11 +162,7 @@ projects.display = function() {
   var project1Image = "images/fry.jpg";
   var formattedProject1Image = HTMLprojectImage.replace("%data%", project1Image);
 
-  $('#projects').append(formattedProjectStart);
-  $('#projects').append(formattedProject1Title);
-  $('#projects').append(formattedProject1Dates);
-  $('#projects').append(formattedProject1Description);
-  $('#projects').append(formattedProject1Image);
+  $('#projects').append(formattedProjectStart, formattedProject1Title, formattedProject1Dates, formattedProject1Description, formattedProject1Image);
 };
 projects.display();
 
