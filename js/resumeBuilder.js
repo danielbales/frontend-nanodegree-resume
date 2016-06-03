@@ -106,12 +106,11 @@ bio.display = function () {
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    //Not sure if this code below is right, is it?
-    var formattedSkillsStart = HTMLskillsStart;
-    var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-    var formattedSkills1 = HTMLskills.replace("%data%", bio.skills[1]);
-    var formattedSkills2 = HTMLskills.replace("%data%", bio.skills[2]);
-    var formattedSkills3 = HTMLskills.replace("%data%", bio.skills[3]);
+    // var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+    // var formattedSkills1 = HTMLskills.replace("%data%", bio.skills[1]);
+    // var formattedSkills2 = HTMLskills.replace("%data%", bio.skills[2]);
+    // var formattedSkills3 = HTMLskills.replace("%data%", bio.skills[3]);
+
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -120,7 +119,12 @@ bio.display = function () {
 
 
     $("#header").prepend(formattedName, formattedRole);
-    $('#header').append(formattedBiopic, formattedWelcome, formattedSkillsStart, formattedSkills, formattedSkills1, formattedSkills2, formattedSkills3);
+    $('#header').append(formattedBiopic, formattedWelcome, HTMLskillsStart);
+      bio.skills.forEach(function(skill){
+            console.log(skill);
+            $("#header").append(skill);
+      });
+      // formattedSkills, formattedSkills1, formattedSkills2, formattedSkills3);
     $('#topContacts').prepend(formattedLocation, formattedEmail, formattedGithub, formattedTwitter, formattedMobile);
     $('#footerContacts').prepend(formattedLocation, formattedEmail, formattedGithub, formattedTwitter, formattedMobile);
 };
