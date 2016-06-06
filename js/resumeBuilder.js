@@ -48,13 +48,15 @@ var education = {
         "dates": "2007-2010",
         "location": "La Jolla, California",
         "degree": "Bachelor of the Arts",
-        "majors": ["International Studies/Business Management"]
+        "majors": ["International Studies/Business Management"],
+        "url": "www.ucsd.edu"
     }, {
         "name": "University of California, San Diego",
         "dates": "2007-2010",
         "location": "La Jolla, California",
         "degree": "Bachelor of the Arts",
-        "majors": ["International Studies/Business Management"]
+        "majors": ["International Studies/Business Management"],
+        "url": "www.ucsd.edu"
     }, {
         "name": "La Jolla High School",
         "dates": "2007-2010",
@@ -126,9 +128,9 @@ bio.display = function() {
 };
 bio.display();
 
+  $("#education").append(HTMLschoolStart);
 
 education.display = function() {
-
 
     //loop starts below
     education.schools.forEach(function(school) {
@@ -139,11 +141,12 @@ education.display = function() {
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
 
+
         $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
-        $("#education").append(HTMLschoolStart);
     });
 
-    $("#education").append(HTMLonlineClasses);
+  $("#education").append(HTMLschoolStart);
+  $("#education").append(HTMLonlineClasses);
 
     //loop starts below
     education.onlineCourses.forEach(function(s) {
@@ -153,8 +156,9 @@ education.display = function() {
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", s.date);
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", s.url);
 
+
         $(".education-entry:last").append(formattedOnlineSchool, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
-        $("#education").append(HTMLschoolStart);
+
     });
 };
 
