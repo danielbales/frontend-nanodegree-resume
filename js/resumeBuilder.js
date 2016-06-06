@@ -62,7 +62,8 @@ var education = {
         "dates": "2007-2010",
         "location": "La Jolla, California",
         "degree": "Bachelor of the Arts",
-        "majors": ["International Studies"]
+        "majors": ["International Studies"],
+        "url": "www.lajollahighschool.edu"
     }],
     "onlineCourses": [{
         "school": "Udacity",
@@ -99,7 +100,7 @@ var projects = {
         "title": "Web Development Wiki",
         "dates": "June 2014 - August 2014",
         "description": "Created an online wiki for Udacity's Web Development Course.",
-        "images": ["images/Discovery_Shark_Week-300x300.jpg"],
+        "images": ["images/15803-Warner-Bros.-145.jpg"],
         "url": "http://helpful-kit-572.appspot.com/"
     }]
 };
@@ -128,7 +129,7 @@ bio.display = function() {
 };
 bio.display();
 
-  $("#education").append(HTMLschoolStart);
+$("#education").append(HTMLschoolStart);
 
 education.display = function() {
 
@@ -140,13 +141,14 @@ education.display = function() {
         var formattedschoolDates = HTMLschoolDates.replace("%data%", school.dates);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
+        var formattedSchoolUrl = HTMLschoolUrl.replace("%data%", school.url);
 
 
-        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
+        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation, formattedSchoolUrl);
     });
 
-  $("#education").append(HTMLschoolStart);
-  $("#education").append(HTMLonlineClasses);
+    $("#education").append(HTMLschoolStart);
+    $("#education").append(HTMLonlineClasses);
 
     //loop starts below
     education.onlineCourses.forEach(function(s) {
@@ -166,12 +168,22 @@ education.display();
 
 projects.display = function() {
 
-    var formattedProject1Dates = HTMLprojectDates.replace("%data%", projects.projects[0].dates);
-    var formattedProject1Title = HTMLprojectTitle.replace("%data%", projects.projects[0].title);
-    var formattedProject1Description = HTMLprojectDescription.replace("%data%", projects.projects[0].description);
-    var formattedProject1Image = HTMLprojectImage.replace("%data%", projects.projects[0].images);
+    // Start the loop
+    projects.projects.forEach(function(project) {
+        $('#projects').append(HTMLprojectStart);
 
-    $('#projects').append(HTMLprojectStart, formattedProject1Title, formattedProject1Dates, formattedProject1Description, formattedProject1Image);
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
+
+        //$('#projects').append(HTMLprojectStart);
+        $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription);
+
+        project.images.forEach(function(image) {
+            var formattedProjectImage = HTMLprojectImage.replace("%data%", image);
+            $('.project-entry:last').append(formattedProjectImage);
+        });
+    });
 };
 projects.display();
 
@@ -191,9 +203,10 @@ work.display = function() {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-        $(".work-entry:last").append(formattedEmployerTitle);
+        $(".work-entry:last").append(formattedEmployerTitle, formattedLocation);
 
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
         $(".work-entry:last").append(formattedDates);
